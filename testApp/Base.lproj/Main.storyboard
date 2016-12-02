@@ -1,26 +1,145 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mvb-SD-U2k">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Images View Controller-->
+        <scene sceneID="VZ0-Jc-03F">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mvb-SD-U2k" customClass="ImagesViewController" customModule="testApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="es1-rb-BIM"/>
+                        <viewControllerLayoutGuide type="bottom" id="2nx-rO-dzK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="dGl-KQ-7nb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XS1-L5-1ic">
+                                <items>
+                                    <navigationItem title="Title" id="ICl-3f-dTz">
+                                        <barButtonItem key="rightBarButtonItem" tag="5" title="Score" id="8iI-6I-uda">
+                                            <connections>
+                                                <action selector="showScoreButton:" destination="mvb-SD-U2k" id="tAv-Iy-l6G"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="emc-Zi-26P">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="emc-Zi-26P" secondAttribute="height" multiplier="1:1" id="jB4-Cc-efb"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BHx-mR-a4K" appends="YES" id="Etj-m1-OOm"/>
+                                    <outletCollection property="gestureRecognizers" destination="2Ro-ZL-Gzq" appends="YES" id="Yox-ti-EWh"/>
+                                </connections>
+                            </imageView>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rnl-ay-BBs">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rnl-ay-BBs" secondAttribute="height" multiplier="1:1" id="2mA-wr-TxQ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KXj-yY-6EY" appends="YES" id="z4c-mm-azC"/>
+                                    <outletCollection property="gestureRecognizers" destination="YrU-Zz-eMr" appends="YES" id="Ae2-Xg-ip0"/>
+                                </connections>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sh1-N3-3Ej">
+                                <frame key="frameInset" minX="142" minY="406" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Qmk-by-w4V">
+                                <frame key="frameInset" minX="175" minY="105" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2nx-rO-dzK" firstAttribute="top" secondItem="rnl-ay-BBs" secondAttribute="bottom" constant="10" id="2HF-dw-Bfx"/>
+                            <constraint firstAttribute="trailing" secondItem="rnl-ay-BBs" secondAttribute="trailing" constant="45" id="85q-V9-Fv8"/>
+                            <constraint firstItem="emc-Zi-26P" firstAttribute="height" secondItem="rnl-ay-BBs" secondAttribute="height" id="Eed-du-wFN"/>
+                            <constraint firstItem="rnl-ay-BBs" firstAttribute="top" secondItem="emc-Zi-26P" secondAttribute="bottom" constant="5" id="FIP-Ss-3Qq"/>
+                            <constraint firstItem="rnl-ay-BBs" firstAttribute="leading" secondItem="emc-Zi-26P" secondAttribute="trailing" constant="15" id="Oa9-rd-Lm9"/>
+                            <constraint firstItem="emc-Zi-26P" firstAttribute="width" secondItem="rnl-ay-BBs" secondAttribute="width" id="Obm-rF-eNS"/>
+                            <constraint firstItem="XS1-L5-1ic" firstAttribute="leading" secondItem="dGl-KQ-7nb" secondAttribute="leading" id="Vtw-mS-dkd"/>
+                            <constraint firstItem="XS1-L5-1ic" firstAttribute="top" secondItem="es1-rb-BIM" secondAttribute="bottom" id="WNN-8P-ApH"/>
+                            <constraint firstItem="emc-Zi-26P" firstAttribute="top" secondItem="XS1-L5-1ic" secondAttribute="bottom" constant="10" id="Wcf-Q8-w4y"/>
+                            <constraint firstAttribute="trailing" secondItem="rnl-ay-BBs" secondAttribute="trailing" constant="35" id="YSU-nw-TwV"/>
+                            <constraint firstItem="rnl-ay-BBs" firstAttribute="top" secondItem="XS1-L5-1ic" secondAttribute="bottom" constant="5" id="c1N-TH-bFr"/>
+                            <constraint firstAttribute="trailing" secondItem="emc-Zi-26P" secondAttribute="trailing" constant="45" id="cMV-xC-jSj"/>
+                            <constraint firstItem="emc-Zi-26P" firstAttribute="leading" secondItem="dGl-KQ-7nb" secondAttribute="leading" constant="35" id="eRf-gn-frT"/>
+                            <constraint firstItem="emc-Zi-26P" firstAttribute="leading" secondItem="dGl-KQ-7nb" secondAttribute="leading" constant="45" id="g2b-fF-avY"/>
+                            <constraint firstItem="XS1-L5-1ic" firstAttribute="centerX" secondItem="dGl-KQ-7nb" secondAttribute="centerX" id="hvS-vu-nmG"/>
+                            <constraint firstItem="rnl-ay-BBs" firstAttribute="leading" secondItem="dGl-KQ-7nb" secondAttribute="leading" constant="45" id="i4J-cZ-I44"/>
+                            <constraint firstItem="emc-Zi-26P" firstAttribute="top" secondItem="XS1-L5-1ic" secondAttribute="bottom" constant="5" id="ixG-ax-O2T"/>
+                            <constraint firstAttribute="trailing" secondItem="XS1-L5-1ic" secondAttribute="trailing" id="suX-cZ-ERr"/>
+                            <constraint firstItem="2nx-rO-dzK" firstAttribute="top" secondItem="emc-Zi-26P" secondAttribute="bottom" constant="10" id="v78-D2-aqd"/>
+                        </constraints>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="Wcf-Q8-w4y"/>
+                                <exclude reference="cMV-xC-jSj"/>
+                                <include reference="eRf-gn-frT"/>
+                                <exclude reference="g2b-fF-avY"/>
+                                <include reference="ixG-ax-O2T"/>
+                                <exclude reference="85q-V9-Fv8"/>
+                                <exclude reference="FIP-Ss-3Qq"/>
+                                <include reference="Oa9-rd-Lm9"/>
+                                <include reference="YSU-nw-TwV"/>
+                                <include reference="c1N-TH-bFr"/>
+                                <exclude reference="i4J-cZ-I44"/>
+                                <include reference="2HF-dw-Bfx"/>
+                                <include reference="v78-D2-aqd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="eRf-gn-frT"/>
+                                <exclude reference="ixG-ax-O2T"/>
+                                <exclude reference="Oa9-rd-Lm9"/>
+                                <exclude reference="YSU-nw-TwV"/>
+                                <exclude reference="c1N-TH-bFr"/>
+                                <exclude reference="2HF-dw-Bfx"/>
+                                <exclude reference="v78-D2-aqd"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="act1" destination="Qmk-by-w4V" id="niV-4k-hPX"/>
+                        <outlet property="act2" destination="Sh1-N3-3Ej" id="FaJ-Tb-UOD"/>
+                        <outlet property="imageView1" destination="emc-Zi-26P" id="dbU-6E-UfE"/>
+                        <outlet property="imageView2" destination="rnl-ay-BBs" id="eme-r3-O6m"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caI-jk-FBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BHx-mR-a4K">
+                    <connections>
+                        <action selector="tapImage1:" destination="mvb-SD-U2k" id="lj7-tA-0iQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="KXj-yY-6EY">
+                    <connections>
+                        <action selector="tapImage2:" destination="mvb-SD-U2k" id="YCa-FL-Mp3"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="2Ro-ZL-Gzq">
+                    <connections>
+                        <action selector="pinchImage1:" destination="mvb-SD-U2k" id="ghg-ZB-VV0"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <pinchGestureRecognizer id="YrU-Zz-eMr">
+                    <connections>
+                        <action selector="pinchImage2:" destination="mvb-SD-U2k" id="gn2-vL-z7P"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="864.01799100449784" y="136.80000000000001"/>
         </scene>
     </scenes>
 </document>
